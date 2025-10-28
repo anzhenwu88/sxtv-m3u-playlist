@@ -2,11 +2,8 @@ name: Update SXTV M3U Playlist
 
 on:
   schedule:
-    # 每30分钟运行一次
     - cron: '*/30 * * * *'
   workflow_dispatch:
-  push:
-    branches: [ main ]
 
 permissions:
   contents: write
@@ -18,9 +15,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-        # 添加这行来解决冲突
-        fetch-depth: 0
       
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -29,27 +23,16 @@ jobs:
         
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
         pip install requests
         
-    - name: Run M3U updater
+    - name: Generate M3U file
       run: |
         python get_m3u_links.py
         
-    - name: Configure Git
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Actions"
-        
-    - name: Check for changes
-      id: git-check
-      run: |
-        echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
-        
-    - name: Commit and push changes
-      if: steps.git-check.outputs.changed > 0
-      run: |
-        git pull --rebase origin main
-        git add sxtv_channels.m3u channels_info.json
-        git commit -m "🔄 Auto-update: $(date +'%Y-%m-%d %H:%M:%S')"
-        git push
+    - name: Commit and Push
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "🔄 Auto-update M3U playlist"
+        file_pattern: |
+          sxtv_channels.m3u
+          channels_info.json
