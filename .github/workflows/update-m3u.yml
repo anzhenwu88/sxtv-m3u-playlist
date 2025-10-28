@@ -18,6 +18,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        # 添加这行来解决冲突
+        fetch-depth: 0
       
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -33,10 +36,20 @@ jobs:
       run: |
         python get_m3u_links.py
         
-    - name: Commit and push changes
+    - name: Configure Git
       run: |
         git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.name "GitHub Actions"
+        
+    - name: Check for changes
+      id: git-check
+      run: |
+        echo "changed=$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
+        
+    - name: Commit and push changes
+      if: steps.git-check.outputs.changed > 0
+      run: |
+        git pull --rebase origin main
         git add sxtv_channels.m3u channels_info.json
-        git commit -m "🔄 Auto-update: $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+        git commit -m "🔄 Auto-update: $(date +'%Y-%m-%d %H:%M:%S')"
         git push
