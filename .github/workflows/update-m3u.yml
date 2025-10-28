@@ -27,7 +27,7 @@ jobs:
         
     - name: Get Real M3U URLs
       run: |
-        python get_real_m3u_links.py
+        python get_m3u_links.py
         
     - name: Commit and Push
       uses: stefanzweifel/git-auto-commit-action@v4
