@@ -1,7 +1,20 @@
 #EXTM3U
 # 山西电视台直播M3U播放列表
-# 更新时间: 2025-10-28 15:39:20
+# 更新时间: 2025-10-28 15:44:54
 # 自动更新周期: 每30分钟
-# 来源: 真实抓取自山西网络广播电视台
-# GitHub: https://github.com/anzhenwu88/sxtv-m3u-playlist
+# 来源: 山西网络广播电视台
 
+#EXTINF:-1 tvg-id="山西卫视" tvg-name="山西卫视" group-title="山西频道",山西卫视
+https://livehhhttps.sxrtv.com/lsdream/SXTV1/live.m3u8
+#EXTINF:-1 tvg-id="黄河电视台" tvg-name="黄河电视台" group-title="山西频道",黄河电视台
+https://livehhhttps.sxrtv.com/lsdream/SXTV2/live.m3u8
+#EXTINF:-1 tvg-id="山西经济与科技" tvg-name="山西经济与科技" group-title="山西频道",山西经济与科技
+https://livehhhttps.sxrtv.com/lsdream/SXTV3/live.m3u8
+#EXTINF:-1 tvg-id="山西影视" tvg-name="山西影视" group-title="山西频道",山西影视
+https://livehhhttps.sxrtv.com/lsdream/SXTV4/live.m3u8
+#EXTINF:-1 tvg-id="山西社会与法治" tvg-name="山西社会与法治" group-title="山西频道",山西社会与法治
+https://livehhhttps.sxrtv.com/lsdream/SXTV5/live.m3u8
+#EXTINF:-1 tvg-id="山西文体生活" tvg-name="山西文体生活" group-title="山西频道",山西文体生活
+https://livehhhttps.sxrtv.com/lsdream/SXTV6/live.m3u8
+#EXTINF:-1 tvg-id="太原-1" tvg-name="太原-1" group-title="山西频道",太原-1
+https://livehhhttps.sxrtv.com/lsdream/taiyuan/live.m3u8
