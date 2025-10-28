@@ -25,14 +25,14 @@ jobs:
       run: |
         pip install requests
         
-    - name: Generate M3U file
+    - name: Get Real M3U URLs
       run: |
-        python get_m3u_links.py
+        python get_real_m3u_links.py
         
     - name: Commit and Push
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: "🔄 Auto-update M3U playlist"
+        commit_message: "🎯 Real M3U URLs update"
         file_pattern: |
           sxtv_channels.m3u
           channels_info.json
