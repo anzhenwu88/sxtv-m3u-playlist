@@ -1,0 +1,15 @@
+{
+  "update_time": "2025-10-28T15:18:56.513592",
+  "channels": {
+    "山西卫视": "https://livehhhttps.sxrtv.com/lsdream/q8RVWgs/1000/17zr0k6.m3u8",
+    "黄河电视台": "https://livehhhttps.sxrtv.com/lsdream/lce1mC4/800/17zr0k6.m3u8",
+    "山西经济与科技": "https://livehhhttps.sxrtv.com/lsdream/4j01KWX/1000/17zr0k6.m3u8",
+    "山西影视": "https://livehhhttps.sxrtv.com/lsdream/Md571Kv/1000/17zr0k6.m3u8",
+    "山西社会与法治": "https://livehhhttps.sxrtv.com/lsdream/p4y5do9/1000/17zr0k6.m3u8",
+    "山西文体生活": "https://livehhhttps.sxrtv.com/lsdream/agmpyEk/1000/17zr0k6.m3u8",
+    "太原-1": "https://livehhhttps.sxrtv.com/lsdream/taiyuan/1000/17zr0k6.m3u8"
+  },
+  "total_channels": 7,
+  "source": "https://www.sxrtv.com/tv/",
+  "note": "自动更新，基于真实地址模式"
+}
